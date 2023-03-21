@@ -84,39 +84,69 @@ const cats = [
 
 let container = document.querySelector("#container");
 
-function createContainer(array){
-    let table = document.createElement('table')
-    table.className = 'table_1'
-    container.append(table)
-
-    let tr_header = document.createElement('tr')
-    table.append(tr_header)
-
-    let th_id = document.createElement('th')
-    let th_name = document.createElement('th')
-    
-
-    th_id.innerText = 'Id'
-    th_name.innerText = 'Name'
-    
-    
-
-    tr_header.append(th_id,th_name,)
-
-    for (let elem of array){
-        let tr_elem = document.createElement('tr')
-        table.append(tr_elem)
-
-        let td_id = document.createElement('td')
-        let td_name = document.createElement('td')
-        
-
-        td_id.innerText = elem.id
-        td_name.innerText = elem.name
-       
-
-        tr_elem.append(td_id,td_name)
-
+function createCard(array){    
+    for(let elem of array){
+        let card = document.createElement('div');
+    card.className = "card";
+    let img = document.createElement('img');
+    img.classList.add("card-img");
+    let name = document.createElement('h2');
+    name.className = 'name';
+    let age = document.createElement('h3');
+    age.className = 'age';
+    let rate = document.createElement('h3');
+    rate.className = 'rate';
+    let desc = document.createElement('div');
+    desc.className = 'desc';
+    let fav = document.createElement('div');
+    fav.className = 'fav';
+        container.append(card);
+        img.src = elem.img_link;
+        name.innerText = elem.name;
+        age.innerText =`Возраст ${elem.age}`;
+        desc.innerText = elem.description;
+        card.append(img,name,age,desc);
     }
 }
-createContainer(cats);
+createCard(cats);
+
+
+
+
+// function createContainer(array){
+//     let table = document.createElement('table')
+//     table.className = 'table_1'
+//     container.append(table)
+
+//     // // let tr_header = document.createElement('tr')
+//     // // table.append(tr_header)
+
+//     // // let th_id = document.createElement('th')
+//     // // let th_name = document.createElement('th')
+    
+
+//     // // th_id.innerText = 'Id'
+//     // // th_name.innerText = 'Name'
+    
+    
+
+//     // tr_header.append(th_id,th_name,)
+
+//     for (let elem of array){
+//         let tr_elem = document.createElement('tr')
+//         table.append(tr_elem);
+    
+//         let td_card = document.createElement('td');
+//         let td_id = document.createElement('td')
+//         let td_name = document.createElement('td')
+        
+
+//         td_id.innerText = elem.id
+//         td_name.innerText = elem.name
+       
+
+//         tr_elem.append(td_id,td_name)
+
+//     }
+// }
+// createContainer(cats);

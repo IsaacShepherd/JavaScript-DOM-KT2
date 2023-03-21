@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+.card-img{
+    height: 100px;
+  }
+  .card{
+    height:300px;
+    width:300px;
+    border: 25px solid #fafafa;
+  }
+  #container{
+    font-family: Montserrat, sans-serif;
+    height:100vh;
+    display: flex;
+  }
