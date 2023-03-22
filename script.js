@@ -98,14 +98,30 @@ function createCard(array){
     rate.className = 'rate';
     let desc = document.createElement('div');
     desc.className = 'desc';
-    let fav = document.createElement('div');
-    fav.className = 'fav';
+    let heartURL = "<i class=\"fa-sharp fa-solid fa-heart fa-xs\"></i>";   // рейтинг в сердцах
+    let heartDiv = document.createElement("div");
+        heartDiv.classList.add("heartDiv");
+    let id = document.createElement("h3");
+        id.innerText =`Номер котика ${elem.id}`;
+    let favTrueURL = '<i class=\"fa-solid fa-heart-circle-check fa-2xl\" style=\"color: #d12eae;\"></i>';
+    let favFalseURL = '<i class=\"fa-solid fa-heart-circle-check fa-2xl\" style=\"color: #345c98;\"></i>';
+    let favDiv = document.createElement('div');
+        favDiv.className = 'favDiv';
+    elem.favourite == false ? favDiv.innerHTML = favFalseURL: favDiv.innerHTML = favTrueURL;
+        
         container.append(card);
         img.src = elem.img_link;
         name.innerText = elem.name;
         age.innerText =`Возраст ${elem.age}`;
         desc.innerText = elem.description;
-        card.append(img,name,age,desc);
+        card.append(img,name,age,desc,heartDiv,id,favDiv);
+        
+    for (let i = 0; i < elem.rate; i++) {
+            let heart = document.createElement("div");
+            heart.innerHTML = heartURL;
+            heartDiv.append(heart);
+            
+        }
     }
 }
 createCard(cats);

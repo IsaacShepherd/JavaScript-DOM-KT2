@@ -1,14 +1,31 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 .card-img{
-    height: 100px;
+    height: 200px;
+    align-self: center;
+    border-radius: 10px 20px;    
   }
   .card{
-    height:300px;
-    width:300px;
+    height:550px;
+    width: 30vw;
     border: 25px solid #fafafa;
+    display: flex;
+    flex-direction: column;
+    
   }
   #container{
     font-family: Montserrat, sans-serif;
     height:100vh;
     display: flex;
+    flex-wrap: wrap;
   }
+  .heartDiv{
+    display:flex;
+    margin-top: 10px;
+    }
+    .age{
+      margin-top: 0px;
+    }
+    .favDiv{
+      
+      align-self: flex-end;
+    }
